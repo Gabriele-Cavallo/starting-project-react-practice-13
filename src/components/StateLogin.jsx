@@ -9,7 +9,6 @@ export default function Login() {
   });
   function handlesSubmit(event){
     event.preventDefault();
-    console.log(enteredValues);
   }
   function handleInputChange(identifier, input){
     setEnteredValues(prevValues => ({
