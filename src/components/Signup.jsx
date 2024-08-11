@@ -1,6 +1,17 @@
 export default function Signup() {
+    function handleSubmit(event){
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        // formData.get('email'); Per ottenere il singolo dato del singolo campo di input
+       // getAll si usa per i gruppi di input che hanno lo stesso name passando il name nelle parentesi
+        const acquisitionChannel = formData.getAll('acquisition');
+        const data = Object.fromEntries(formData.entries());
+        data.acquisition = acquisitionChannel;
+        console.log(data);
+    }
     return (
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Welcome on board!</h2>
         <p>We just need a little bit of data from you to get you started 🚀</p>
   
